@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import zoomLogo from '../../assets/images/zoom.jfif';
+import logo from '../../assets/images/logo-brand.svg'
 import { login } from "./FakeAuth";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -13,7 +13,7 @@ const Login = () => {
         e.preventDefault();
         const result = login(email , password)
         if(result.success){
-            toast.success("Login Successful");
+            toast.success("Login Successfully");
             navigate("/dashboard");
         }
         else{
@@ -27,8 +27,8 @@ const Login = () => {
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <img
             alt="Your Company"
-            src={zoomLogo}
-            className="mx-auto h-25 w-auto"
+            src={logo}
+            className="mx-auto h-8 w-auto"
           />
           <h2 className="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900">
             Sign in to your account
@@ -61,7 +61,7 @@ const Login = () => {
                   Password
                 </label>
                 <div className="text-sm">
-                  <a href="#" className="font-semibold text-primary hover:text-indigo-500">
+                  <a href="#" className="font-semibold text-sky-500 hover:text-indigo-500">
                     Forgot password?
                   </a>
                 </div>
@@ -83,7 +83,7 @@ const Login = () => {
             <div>
               <button
                 type="submit"
-                className="flex w-full justify-center rounded-md btn-primary cursor-pointer px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="flex w-full justify-center rounded-md bg-sky-500 cursor-pointer px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 Sign in
               </button>
@@ -92,7 +92,7 @@ const Login = () => {
 
           <p className="mt-10 text-center text-sm/6 text-gray-500">
             Not a member?{' '}
-            <a href="#" className="font-semibold text-primary">
+            <a href="#" className="font-semibold text-sky-500 hover:text-indigo-500">
               Start a 14 day free trial
             </a>
           </p>

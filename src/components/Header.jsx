@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import logo from "../assets/images/logo-brand.svg";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -13,24 +14,18 @@ const Header = () => {
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "Dashboard", path: "/dashboard" },
-    { name: "Projects", path: "/projects" },
-    { name: "Pricing", path: "/pricing" },
+    { name: "Destinations", path: "/destinations" },
+    { name: "Contact Us", path: "/contact" },
   ];
 
   return (
     <header className="border-b border-gray-200 dark:border-white/10">
-      <nav className="mx-auto max-w-7xl px-4">
+      <nav className="mx-auto  px-20">
         <div className="flex h-16 items-center justify-between">
+          <img src={logo} className="h-8" />
 
-          {/* Logo */}
-          <img
-            src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
-            className="h-8"
-          />
-
-          {/* Desktop Nav */}
           <div className="hidden md:flex gap-8">
-            {navLinks.map(link => (
+            {navLinks.map((link) => (
               <NavLink
                 key={link.name}
                 to={link.path}
@@ -43,7 +38,6 @@ const Header = () => {
             ))}
           </div>
 
-          {/* Actions */}
           <div className="flex items-center gap-4">
             <button
               onClick={toggleDark}
@@ -52,11 +46,13 @@ const Header = () => {
               🌙
             </button>
 
-            <Link to="/login" className="hidden md:block rounded-md bg-indigo-500 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-400 cursor-pointer">
+            <Link
+              to="/login"
+              className="hidden md:block rounded-md bg-sky-500 px-4 py-2 text-[16px] font-semibold text-white hover:bg-blue-500 cursor-pointer"
+            >
               Get Started
             </Link>
 
-            {/* Mobile Menu Button */}
             <button
               onClick={() => setOpen(!open)}
               className="md:hidden rounded-lg p-2 hover:bg-gray-100 dark:hover:bg-gray-700"
@@ -66,10 +62,9 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Mobile Menu */}
         {open && (
           <div className="md:hidden space-y-2 pb-4">
-            {navLinks.map(link => (
+            {navLinks.map((link) => (
               <NavLink
                 key={link.name}
                 to={link.path}
@@ -82,7 +77,10 @@ const Header = () => {
               </NavLink>
             ))}
 
-            <Link to="/login" className="mt-2 w-full rounded-md bg-indigo-500 py-2 text-white cursor-pointer">
+            <Link
+              to="/login"
+              className="mt-2 w-full rounded-md bg-indigo-500 py-2 text-white cursor-pointer"
+            >
               Get Started
             </Link>
           </div>
