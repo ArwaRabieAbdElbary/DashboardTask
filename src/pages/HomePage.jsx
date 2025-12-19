@@ -7,6 +7,7 @@ import colorado from "../assets/images/colorado.jpg";
 import miami from "../assets/images/miami.jpg";
 import seattle from "../assets/images/seattle.jpg";
 import toronto from "../assets/images/toronto.jpg";
+import beach from "../assets/images/beach-work.jpg";
 
 const HomePage = () => {
   return (
@@ -36,7 +37,7 @@ const HomePage = () => {
 
         <div class="w-full md:basis-1/2 lg:basis-3/5 order-1 md:order-2">
           <img
-            src="src\assets\images\beach-work.jpg"
+            src={beach}
             class="object-cover w-full h-full rounded-lg shadow-md mx-auto"
           />
         </div>
