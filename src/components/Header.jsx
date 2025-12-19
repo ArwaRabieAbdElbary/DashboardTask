@@ -4,12 +4,6 @@ import logo from "../assets/images/logo-brand.svg";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
-  const [dark, setDark] = useState(false);
-
-  const toggleDark = () => {
-    setDark(!dark);
-    document.documentElement.classList.toggle("dark");
-  };
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -40,7 +34,6 @@ const Header = () => {
 
           <div className="flex items-center gap-4">
             <button
-              onClick={toggleDark}
               className="rounded-lg p-2 hover:bg-gray-100 dark:hover:bg-gray-700"
             >
               🌙
@@ -79,7 +72,7 @@ const Header = () => {
 
             <Link
               to="/login"
-              className="mt-2 w-full rounded-md bg-indigo-500 py-2 text-white cursor-pointer"
+              className="mt-3 w-full rounded-md bg-sky-500 py-2 text-white cursor-pointer p-3"
             >
               Get Started
             </Link>
